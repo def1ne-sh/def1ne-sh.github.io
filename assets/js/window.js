@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.querySelector('.main-window');
     const header = modal ? modal.querySelector('.top-app-bar') : null;
 
-    // --- 1. ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК БЕЗ ПЕРЕЗАГРУЗКИ СТРАНИЦЫ ---
     const navButtons = document.querySelectorAll('.nav-button');
     const tabContents = document.querySelectorAll('.tab-content');
 
@@ -21,8 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // --- 2. ПЕРЕТАСКИВАНИЕ ОКНА ---
+    
     if (modal && header) {
         let isDragging = false;
         let startX = 0, startY = 0;
@@ -68,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 3. ЧАСЫ И ДАТА (MAC OS MENUBAR) ---
     function updateDateTime() {
         const dtElement = document.getElementById('datetime');
         if (!dtElement) return;
@@ -91,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateDateTime, 1000);
 });
 
-// --- 4. ВЫПАДАЮЩЕЕ МЕНЮ APPLE ---
     const appleBtn = document.getElementById('apple-menu-btn');
     const appleMenu = document.getElementById('apple-dropdown-menu');
     const appleDropdown = document.querySelector('.apple-dropdown');
@@ -103,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
             appleDropdown.classList.toggle('active');
         });
 
-        // Закрытие меню при клике в любую другую точку экрана
         document.addEventListener('click', () => {
             appleMenu.classList.remove('show');
             appleDropdown.classList.remove('active');
