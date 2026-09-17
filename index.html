@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/light.css" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="assets/css/dark.css" media="(prefers-color-scheme: dark)">
+    <link rel="shortcut icon" href="assets/img/logo.jpg" type="image/x-icon">
+    <title>define</title>
+</head>
+<body>
+    <iframe src="assets/img/FirstLogonAnim.html" id="bg-iframe"></iframe>
+
+    <!-- Верхняя панель macOS -->
+    <div class="menubar">
+        <div class="menubar-left">
+            <!-- Кнопка Apple с выпадающим меню -->
+            <div class="apple-dropdown">
+                <span class="apple-logo" id="apple-menu-btn"></span>
+                <div class="dropdown-content" id="apple-dropdown-menu">
+                    <a href="#" onclick="alert('define Web Edition\nВерсия 1.0'); return false;">Об этом Mac</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#">Системные настройки</a>
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-item has-arrow">
+                        <span>Недавние объекты</span>
+                        <span class="arrow">▶</span>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" onclick="location.reload(); return false;" class="has-shortcut">
+                        <span>Завершить принудительно Finder</span>
+                        <span class="shortcut">⌥⇧⌘⎋</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#">Режим сна</a>
+                    <a href="#" onclick="location.reload(); return false;">Перезагрузить</a>
+                    <a href="#" onclick="window.close(); return false;">Выключить</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="has-shortcut">
+                        <span>Заблокировать экран</span>
+                        <span class="shortcut">^⌘Q</span>
+                    </a>
+                    <a href="#" class="has-shortcut">
+                        <span>Завершить сеанс</span>
+                        <span class="shortcut">⇧⌘Q</span>
+                    </a>
+                </div>
+            </div>
+            
+            <span class="app-title">Finder</span>
+            <span class="menu-item">Файл</span>
+            <span class="menu-item">Правка</span>
+            <span class="menu-item">Вид</span>
+            <span class="menu-item">Переход</span>
+            <span class="menu-item">Окно</span>
+            <span class="menu-item">Справка</span>
+        </div>
+
+        <div class="menubar-right">
+            <div class="menubar-icons">
+                <a href="#" class="menubar-icon-link">
+                    <img src="assets/img/wifi.svg" alt="Wi-Fi" class="menubar-icon">
+                </a>
+                <a href="#" class="menubar-icon-link">
+                    <img src="assets/img/accessibility.svg" alt="Accessibility" class="menubar-icon">
+                </a>
+                <a href="#" class="menubar-icon-link">
+                    <img src="assets/img/bell.slash.fill.svg" alt="Do Not Disturb" class="menubar-icon">
+                </a>
+                <a href="#" class="menubar-icon-link">
+                    <img src="assets/img/icloud.svg" alt="iCloud" class="menubar-icon">
+                </a>
+            </div>
+            <span id="datetime">Ср 17 сен 19:13</span>
+        </div>
+    </div>
+
+    <!-- Главное окно -->
+    <div class="main-window">
+        <div class="null-object"></div>
+        <div class="main-buttons">
+            <button class="close-button"></button>
+            <button class="hide-button"></button>
+            <button class="expand-button" disabled></button>
+        </div>
+        
+        <div class="top-app-bar">
+            <ul class="navigation">
+                <li><button data-tab="tab-main" class="nav-button active">Главная</button></li>
+                <li class="separator"></li>
+                <li><button data-tab="tab-pc" class="nav-button">Компьютер</button></li>
+                <li class="separator"></li>
+                <li><button data-tab="tab-peripherals" class="nav-button">Периферия</button></li>
+                <li class="separator"></li>
+                <li><button data-tab="tab-phone" class="nav-button">Телефон</button></li>
+                <li class="separator"></li>
+                <li><button data-tab="tab-friends" class="nav-button">Друзья</button></li>
+            </ul>
+        </div>
+
+        <!-- Вкладка 1: Главная -->
+        <div id="tab-main" class="tab-content active">
+            <div class="main-content">
+                <div class="logo">
+                    <img src="assets/img/logo.png" alt="Logo" width="160" height="160">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        <h2>define</h2>
+                        <h5>Владелец сайта</h5>
+                    </div>
+                    <div class="info">
+                        <table>
+                            <tbody>
+                                <tr><td>Имя</td><td>Андрей</td></tr>
+                                <tr><td>Псевдоним</td><td>define</td></tr>
+                                <tr><td>Возраст</td><td>14 лет</td></tr>
+                                <tr><td>Страна</td><td>Украина</td></tr>
+                                <tr><td>Город</td><td>Киев</td></tr>
+                                <tr><td>День рождения</td><td>13 сентября</td></tr>
+                                <tr><td>Часовой пояс</td><td>GMT+2 (Киев)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="link-buttons">
+                            <a href="https://open.spotify.com/user/315ytekqavdftgfrl7gv6cvdzduy" target="_blank" class="link-button">Spotify</a>
+                            <a href="https://github.com/hackintoshuser137" target="_blank" class="link-button">Github</a>
+                            <a href="https://osu.ppy.sh/users/36530136" target="_blank" class="link-button">Osu!</a>
+                            <a href="https://steamcommunity.com/id/hackintosh_user/" target="_blank" class="link-button">Steam</a>
+                            <a href="https://t.me/define_sh" target="_blank" class="link-button">Telegram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Вкладка 2: Компьютер -->
+        <div id="tab-pc" class="tab-content">
+            <div class="main-content">
+                <div class="logo-o">
+                    <img src="assets/img/imac.png" alt="iMac" width="150" height="150">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        <h2>Asus Tuf Gaming B550m-plus Wifi II</h2>
+                        <h5>Windows 10 LTSC 21H2</h5>
+                    </div>
+                    <div class="info">
+                        <table>
+                            <tbody>
+                                <tr><td>Процессор</td><td>AMD Ryzen 5 5600 4.5Ghz</td></tr>
+                                <tr><td>Охлаждение</td><td>ID-Cooling SE-224-XTS BLACK ARGB</td></tr>
+                                <tr><td>Граф. процессор</td><td>Nvidia RTX 5060Ti 8GB</td></tr>
+                                <tr><td>Оперативная память</td><td>2x8GB Kingston Fury Beast 3200Mhz</td></tr>
+                                <tr><td>Блок питания</td><td>MSI MAG A750GL</td></tr>
+                                <tr><th rowspan="3">Хранилище</th><td>SSD Kingston SA400S37480G 480GB</td></tr>
+                                <tr><td>M2 NVMe SK Hynix 256GB</td></tr>
+                                <tr><td>HDD ST1000LM035-1RK172 1TB</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Вкладка 3: Периферия -->
+        <div id="tab-peripherals" class="tab-content">
+            <div class="main-content">
+                <div class="logo-o">
+                    <img src="assets/img/gamepad.png" alt="Gamepad" width="150">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        <h2>Периферия</h2>
+                        <h5>Девайсы и сетап</h5>
+                    </div>
+                    <div class="info">
+                        <table>
+                            <tbody>
+                                <tr><td>Монитор</td><td>Samsung S27C36x, 1920x1080@75</td></tr>
+                                <tr><th rowspan="2">Наушники</th><td>Logitech G435 LIGHTSPEED</td></tr>
+                                <tr><td>JBL Wave Beam (Bluetooth)</td></tr>
+                                <tr><td>Мышь</td><td>Hator Pulsar 3 wireless</td></tr>
+                                <tr><td>Клавиатура</td><td>Ajazz AK820 Max HE</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Вкладка 4: Телефон -->
+        <div id="tab-phone" class="tab-content">
+            <div class="main-content">
+                <div class="logo-o">
+                    <img src="assets/img/iphone.png" alt="iPhone" width="136">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        <h2>iPhone 14 Pro</h2>
+                        <h5>iOS 18.6.2</h5>
+                    </div>
+                    <div class="info">
+                        <table>
+                            <tbody>
+                                <tr><td>Процессор</td><td>Apple A16 Bionic</td></tr>
+                                <tr><td>Граф. процессор</td><td>Apple GPU 5 cores</td></tr>
+                                <tr><td>Оперативная память</td><td>6 GB LPDDR5</td></tr>
+                                <tr><td>Хранилище</td><td>128 GB</td></tr>
+                                <tr><td>Аккумулятор</td><td>3200 mAh</td></tr>
+                                <tr><td>Дисплей</td><td>Super Retina XDR 2556×1179@120</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Вкладка 5: Друзья -->
+        <div id="tab-friends" class="tab-content">
+            <div class="main-content">
+                <div class="logo-o">
+                    <img src="assets/img/contacts.png" alt="Contacts" width="136">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        <h2>Друзья</h2>
+                    </div>
+                    <div class="info">
+                        <table>
+                            <tbody>
+                                <tr><th rowspan="2">Operating System Tester</th><td><a href="https://ost-sys.github.io/" target="_blank">Сайт</a></td></tr>
+                                <tr><td><a href="https://www.youtube.com/channel/@OS-Tester" target="_blank">YouTube</a></td></tr>
+                                <tr><th rowspan="2">NixxO</th><td><a href="https://t.me/nixxoq" target="_blank">Telegram</a></td></tr>
+                                <tr><td><a href="https://github.com/nixxoq" target="_blank">Github</a></td></tr>
+                                <tr><td>Den4iklovelinux</td><td><a href="https://iwddie.whenill.cyou" target="_blank">Сайт</a></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>2024 - 2026. All rights are stolen :D</p>
+        </div>
+    </div>
+
+    <script src="assets/js/window.js"></script>
+</body>
+</html>

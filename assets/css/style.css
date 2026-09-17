@@ -1,0 +1,430 @@
+@font-face {
+    font-family: SF Pro;
+    src: url(../fonts/SF_Pro/SF-Pro.ttf);
+}
+
+* {
+    transition: 0.2s;
+    font-family: SF Pro, -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 300;
+    color: var(--font-color);
+    user-select: none;
+    outline: none;
+}
+
+*:focus-visible {
+    outline: none;
+    transform: scale(1.05);
+}
+
+body {
+    background-image: var(--wallpaper);
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    background-size: cover;
+    overflow: hidden;
+}
+
+#bg-iframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* --- ВЕРХНЯЯ ПАНЕЛЬ MACOS (MENUBAR) --- */
+.menubar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    font-size: 13px;
+    color: #ffffff;
+    z-index: 9999;
+    user-select: none;
+}
+
+.menubar-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.menubar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+}
+
+.app-title {
+    font-weight: 700;
+    cursor: default;
+}
+
+.menu-item {
+    font-weight: 400;
+    opacity: 0.9;
+    cursor: default;
+}
+
+.menu-item:hover {
+    opacity: 1;
+}
+
+#datetime {
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+}
+
+/* Иконки системного трея */
+.menubar-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.menubar-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0.85;
+    transition: opacity 0.15s;
+}
+
+.menubar-icon-link:hover {
+    opacity: 1;
+}
+
+.menubar-icon {
+    width: 16px;
+    height: 16px;
+    filter: invert(1);
+    object-fit: contain;
+}
+
+/* Выпадающее меню Apple */
+.apple-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.apple-logo {
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.apple-logo:hover, .apple-dropdown.active .apple-logo {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 26px;
+    left: 0;
+    width: 240px;
+    background: rgba(230, 240, 250, 0.85);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    padding: 4px 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    z-index: 10000;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content a,
+.dropdown-content a *,
+.dropdown-item,
+.dropdown-item * {
+    color: #1d1d1f;
+    padding: 0;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    cursor: default;
+    user-select: none;
+}
+
+.dropdown-content a,
+.dropdown-item {
+    padding: 3px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-content a:hover,
+.dropdown-content a:hover *,
+.dropdown-item:hover,
+.dropdown-item:hover * {
+    background-color: #2b72d6;
+    color: #ffffff;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 4px 0;
+}
+
+.shortcut {
+    font-size: 12px;
+    color: #424245;
+    letter-spacing: 1px;
+}
+
+.arrow {
+    font-size: 9px;
+    color: #1d1d1f;
+}
+
+/* --- ОСНОВНОЕ ОКНО --- */
+.main-window {
+    background-color: var(--window-background);
+    width: 660px;
+    height: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 10px 20px 10px #00000070;
+    border-radius: 12px;
+    backdrop-filter: blur(25px);
+    border: 1px solid var(--window-border);
+    will-change: left, top;
+    transition: none !important;
+}
+
+.null-object {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    border-radius: 11px;
+    z-index: 1;
+    box-shadow: inset 0 0 0 1px #ffffff30;
+    pointer-events: none !important;
+}
+
+/* Хедер окна */
+.top-app-bar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    background-color: var(--top-app-bar-background);
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 0 0 1px #00000050;
+}
+
+.main-buttons {
+    padding: 13px;
+    transform: translateY(1px);
+    z-index: 2;
+    display: flex;
+    position: fixed;
+    align-items: center;
+}
+
+.close-button, .hide-button, .expand-button {
+    width: 13px;
+    height: 13px;
+    border-radius: 100%;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.close-button {
+    background-color: #ff5550;
+    box-shadow: inset 0 0 0 1px #e04b43;
+}
+
+.hide-button {
+    background-color: #ffb33d;
+    box-shadow: inset 0 0 0 1px #d29e42;
+    margin: 0 8px;
+}
+
+.expand-button {
+    background-color: #33c848;
+    box-shadow: inset 0 0 0 1px #2aaa3a;
+}
+
+.expand-button:disabled {
+    background-color: var(--main-buttons-disabled);
+    box-shadow: inset 0 0 0 1px var(--main-buttons-disabled-border);
+}
+
+/* Навигация в окне */
+.navigation {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    background-color: var(--top-app-bar-background);
+    border-radius: 6px;
+    position: relative;
+    box-shadow: inset 0 0 0 1px var(--top-app-bar-navigation-border);
+}
+
+.navigation li {
+    list-style: none;
+    display: inline-flex;
+}
+
+.nav-button {
+    background-color: transparent;
+    color: var(--top-app-bar-navigation-font-color);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 5px 8px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.nav-button:hover {
+    background-color: var(--top-app-bar-navigation-hover-background);
+    color: var(--top-app-bar-navigation-active-font-color);
+}
+
+.nav-button.active {
+    background-color: var(--top-app-bar-navigation-active-background);
+    color: var(--top-app-bar-navigation-active-font-color);
+}
+
+.separator {
+    height: 14px;
+    width: 1px;
+    background-color: var(--separator);
+}
+
+/* --- КОНТЕНТ ВКЛАДОК --- */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.main-content {
+    z-index: 2;
+    display: flex;
+    width: 100%;
+    height: 350px; 
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo, .logo-o {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    height: 100%;
+    width: 234px;
+}
+
+.logo img {
+    border: 2px solid rgb(211, 211, 211);
+    border-radius: 10%;
+    box-shadow: 0 1px 3px 2px #00000035;
+}
+
+.content {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    margin-bottom: 26px;
+}
+
+.title h2 {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.title h5 {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #a0a0a0;
+}
+
+td, th {
+    text-align: start;
+    font-size: 14px; 
+    padding: 0 15px 6px 0; 
+    white-space: nowrap;
+}
+
+.link-buttons {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.link-button {
+    padding: 3px 10px;
+    font-size: 11px;
+    background-color: var(--button);
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 1px 0 1px #00000010;
+    display: inline-block;
+}
+
+.link-button:active {
+    background-color: var(--button-press);
+}
+
+.copyright {
+    position: absolute;
+    display: inline-flex;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    font-size: 10px;
+    padding: 5px 0;
+}
+
+.copyright p {
+    color: var(--copyright-color);
+}

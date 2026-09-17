@@ -1,0 +1,26 @@
+:root {
+    /* window */
+    --wallpaper: url(../img/dark.png);
+    --font-color: #fff;
+    --window-background: #212121f0;
+    --window-border: #000000;
+    --top-app-bar-background: #333333;
+    /* main buttons */
+    --main-buttons-disabled: #ffffff30;
+    --main-buttons-disabled-border: #ffffff10;
+    /* navigation */
+    --top-app-bar-background: #333333;
+    --top-app-bar-navigation-border: #ffffff20;
+    --top-app-bar-navigation-font-color: #ffffff70;
+    --top-app-bar-navigation-active-font-color: #fff;
+    --top-app-bar-navigation-hover-background: #ffffff10;
+    --top-app-bar-navigation-active-background: #ffffff20;
+    /* buttons */
+    --button: #595959;
+    --button-press: #696969; 
+    /* copyright (fake) */
+    --copyright-color: #ffffff30;
+    /* separator */
+    --separator: #ffffff20;
+
+}
