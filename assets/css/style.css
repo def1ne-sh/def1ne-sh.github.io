@@ -21,11 +21,8 @@
 }
 
 body {
-    background-image: var(--wallpaper);
-    background-repeat: no-repeat;
-    background-position: center;
+    background-color: #000;
     min-height: 100vh;
-    background-size: cover;
     overflow: hidden;
 }
 
@@ -36,11 +33,11 @@ body {
     width: 100vw;
     height: 100vh;
     border: none;
-    z-index: -1;
+    z-index: 0;
     pointer-events: none;
+    background: transparent;
 }
 
-/* --- ВЕРХНЯЯ ПАНЕЛЬ MACOS (MENUBAR) --- */
 .menubar {
     position: fixed;
     top: 0;
@@ -94,7 +91,6 @@ body {
     letter-spacing: 0.2px;
 }
 
-/* Иконки системного трея */
 .menubar-icons {
     display: flex;
     align-items: center;
@@ -121,7 +117,6 @@ body {
     object-fit: contain;
 }
 
-/* Выпадающее меню Apple */
 .apple-dropdown {
     position: relative;
     display: inline-block;
@@ -206,7 +201,6 @@ body {
     color: #1d1d1f;
 }
 
-/* --- ОСНОВНОЕ ОКНО --- */
 .main-window {
     background-color: var(--window-background);
     width: 660px;
@@ -221,6 +215,7 @@ body {
     border: 1px solid var(--window-border);
     will-change: left, top;
     transition: none !important;
+    z-index: 10;
 }
 
 .null-object {
@@ -233,7 +228,6 @@ body {
     pointer-events: none !important;
 }
 
-/* Хедер окна */
 .top-app-bar {
     display: inline-flex;
     align-items: center;
@@ -284,7 +278,6 @@ body {
     box-shadow: inset 0 0 0 1px var(--main-buttons-disabled-border);
 }
 
-/* Навигация в окне */
 .navigation {
     z-index: 2;
     display: flex;
@@ -328,7 +321,6 @@ body {
     background-color: var(--separator);
 }
 
-/* --- КОНТЕНТ ВКЛАДОК --- */
 .tab-content {
     display: none;
 }
