@@ -1,6 +1,5 @@
 :root {
     /* window */
-    --wallpaper: url(../img/dark.png);
     --font-color: #fff;
     --window-background: #212121f0;
     --window-border: #000000;
@@ -22,5 +21,4 @@
     --copyright-color: #ffffff30;
     /* separator */
     --separator: #ffffff20;
-
 }
