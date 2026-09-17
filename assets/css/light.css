@@ -1,26 +1,18 @@
 :root {
-    /* window */
-    --wallpaper: url(../img/light.png   );
     --font-color: #000;
     --window-background: #f0eeeef0;
     --window-border: #000000;
     --top-app-bar-background: #333333;
-    /* main buttons */
     --main-buttons-disabled: #00000020;
     --main-buttons-disabled-border: #00000010;
-    /* navigation */
     --top-app-bar-background: #f0f1f1;
     --top-app-bar-navigation-border: #00000020;
     --top-app-bar-navigation-font-color: #00000080;
     --top-app-bar-navigation-active-font-color: #000;
     --top-app-bar-navigation-hover-background: #00000005;
     --top-app-bar-navigation-active-background: #00000015;
-    /* buttons */
     --button: #fff;
     --button-press: #f0f0f0; 
-    /* copyright (fake) */
     --copyright-color: #00000070;
-    /* separator */
     --separator: #00000010;
-
 }
