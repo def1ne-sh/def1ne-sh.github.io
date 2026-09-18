@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateDateTime();
     setInterval(updateDateTime, 1000);
-
+    
     const bgIframe = document.getElementById('bg-iframe');
     const wallpaperBtn = document.getElementById('wallpaper-menu-btn');
     const wallpaperMenu = document.getElementById('wallpaper-dropdown-menu');
